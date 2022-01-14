@@ -22,6 +22,13 @@
             });
         }
 
+        //set sorting filters
+        if (settings.aaSorting[0][0]) {
+            inputFilter = $.extend(inputFilter, {
+                sorting: settings.aoColumns[settings.aaSorting[0][0]].data + ' ' + settings.aaSorting[0][1]
+            });
+        }
+        
         //execute ajax function with filter
         if (listAction.ajaxFunction) {
             listAction.ajaxFunction(inputFilter)
